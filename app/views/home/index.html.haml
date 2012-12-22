@@ -1,0 +1,70 @@
+.jumbotron
+  %h1 Курсы по Ruby и Ruby on Rails
+  %p.lead
+    Севастопольская команда
+    %a{:href => "http://kodolabs.com", :target => "_blank"} Kodo Labs
+    организовывает курсы по Ruby и Ruby on Rails.
+    Этот сайт поможет нам собрать информацию о ваших предпочтениях и пожеланиях.
+    %br
+    Если вам это интересно, жмите кнопку "Мне интересно!".
+
+
+  %a#open-forms.btn.btn-large.btn-success{:href => "#"} Мне интересно!
+
+= form_for @user, :remote => true, :html => { :class => 'form-inline hide' } do |f|
+  %legend Legend 1
+  .input-prepend.input-append
+    %span.add-on
+      %i.icon-envelope
+    = f.email_field :email, :class => 'span3', :required => true, :placeholder => 'Ваш email'
+    = f.submit 'Добавить', :class => 'btn btn-primary'
+
+= form_for @questionary, :remote => true, :html => { :class => 'form-horizontal hide' } do |f|
+  %legend Legend 2
+  .control-group
+    = f.label :question_1, :class => 'control-label'
+    .controls
+      = f.text_field :question_1
+  .control-group
+    = f.label :question_2, :class => 'control-label'
+    .controls
+      %label.radio
+        = f.radio_button :question_2, 'A'
+        A
+      %label.radio
+        = f.radio_button :question_2, 'B'
+        B
+      %label.radio
+        = f.radio_button :question_2, 'C'
+        C
+  .control-group
+    = f.label :question_3, :class => 'control-label'
+    .controls
+      %label.checkbox
+        = f.check_box :question_3, :value => 'A'
+        A
+      %label.checkbox
+        = f.check_box :question_3, :value => 'B'
+        B
+      %label.checkbox
+        = f.check_box :question_3, :value => 'C'
+        C
+  .control-group
+    .controls
+      = f.submit 'Отправить', :class => 'btn btn-primary'
+%hr
+
+.row-fluid.marketing
+  .span6
+    %h4 Скорость разработки
+    %p Быстрая разработка веб-приложений
+    %h4 Перспектива влиться в нашу команду
+    %p Возможность продолжить обучение и начать работу в нашей команде после окончания курсов
+    %h4 Высокая зарплата rails-разработчика
+    %p
+      Статистика зарплат от
+      %a{:href => "http://dou.ua/lenta/articles/developers-salaries-may-june-2012/", :target => "_blank"} DOU
+      по Украине
+  .span6
+    %h4 Знание одного из самых классных языков программирования
+    %p Ruby создавался как язык для программистов, он очень экспрессивный и интуитивный
