@@ -4,12 +4,11 @@ require 'spec_helper'
 feature 'User save information', :js do
   scenario 'submit all forms' do
     visit root_path
-    click_on 'Мне интересно!'
 
     page.should have_selector('#new_user', :visible => true)
     within '#new_user' do
       fill_in 'email', :with => 'user@mail.com'
-      click_on 'Мне интересно!'
+      click_on 'Добавить'
     end
 
     page.should have_selector('#new_questionary', :visible => true)
@@ -19,15 +18,16 @@ feature 'User save information', :js do
       choose Questionary::EXPIRIENCE.first
       click_on 'Отправить'
     end
+
+    page.should have_selector('#thank_you', :visible => true)
   end
 
   scenario 'submit invalid email' do
     visit root_path
-    click_on 'Мне интересно!'
 
     within '#new_user' do
       fill_in 'email', :with => ''
-      click_on 'Мне интересно!'
+      click_on 'Добавить'
     end
 
     page.should_not have_selector('#new_questionary', :visible => true)
