@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def create
-    user = User.new(params[:user])
-    @success = user.save
+    @user = User.find_or_create_by_email(params[:email])
   end
 end

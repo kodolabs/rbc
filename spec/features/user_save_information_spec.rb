@@ -8,16 +8,15 @@ feature 'User save information', :js do
 
     page.should have_selector('#new_user', :visible => true)
     within '#new_user' do
-      fill_in 'user_email', :with => 'user@mail.com'
-      click_on 'Добавить'
+      fill_in 'email', :with => 'user@mail.com'
+      click_on 'Мне интересно!'
     end
 
     page.should have_selector('#new_questionary', :visible => true)
     within '#new_questionary' do
-      fill_in 'questionary_question_1', :with => 'Foo man'
-      choose 'B'
-      check 'A'
-      check 'C'
+      choose Questionary::COURSE_FORMATS.first
+      choose Questionary::YES_NO.first
+      choose Questionary::EXPIRIENCE.first
       click_on 'Отправить'
     end
   end
@@ -27,8 +26,8 @@ feature 'User save information', :js do
     click_on 'Мне интересно!'
 
     within '#new_user' do
-      fill_in 'user_email', :with => ''
-      click_on 'Добавить'
+      fill_in 'email', :with => ''
+      click_on 'Мне интересно!'
     end
 
     page.should_not have_selector('#new_questionary', :visible => true)

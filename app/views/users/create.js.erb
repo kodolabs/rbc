@@ -1,4 +1,4 @@
-<% if @success %>
+<% if @user.persisted? %>
   $('#new_user input').addClass('disabled').attr('disabled', 'disabled');
-  $('#new_questionary').slideDown('slow')
+  $('#new_questionary').slideDown('slow');
 <% end %>

@@ -5,53 +5,57 @@
     %a{:href => "http://kodolabs.com", :target => "_blank"} Kodo Labs
     организовывает курсы по Ruby и Ruby on Rails.
     Этот сайт поможет нам собрать информацию о ваших предпочтениях и пожеланиях.
-    %br
-    Если вам это интересно, жмите кнопку "Мне интересно!".
+    %br/
+    Если вам это интересно, смело жмите кнопку "Мне интересно!"
 
+= form_for @user, :remote => true, :html => { :class => 'form-horizontal' } do |f|
+  %p Мы вышлем вам приглашение на курсы, как только определимся с датой и форматом.
+  = email_field_tag :email, '', :class => 'span3', :required => true, :placeholder => 'Ваш email'
+  = f.submit 'Мне интересно!', :class => 'btn btn-success btn-large'
 
-  %a#open-forms.btn.btn-large.btn-success{:href => "#"} Мне интересно!
-
-= form_for @user, :remote => true, :html => { :class => 'form-inline hide' } do |f|
-  %legend Legend 1
-  .input-prepend.input-append
-    %span.add-on
-      %i.icon-envelope
-    = f.email_field :email, :class => 'span3', :required => true, :placeholder => 'Ваш email'
-    = f.submit 'Добавить', :class => 'btn btn-primary'
-
-= form_for @questionary, :remote => true, :html => { :class => 'form-horizontal hide' } do |f|
-  %legend Legend 2
-  .control-group
-    = f.label :question_1, :class => 'control-label'
+= form_for @questionary, :remote => true, :html => { :class => 'form-vertical hide' } do |f|
+  %p
+    Мы будем очень благодарны, если вы ответите на несколько вопросов.
+    %br/
+    Это займет 30 секунд и нужно, чтобы курсы были эффективными.
+  .control-group.well
+    = f.label :course_format, "Какой формат курсов вам больше нравится?", :class => 'control-label'
     .controls
-      = f.text_field :question_1
-  .control-group
-    = f.label :question_2, :class => 'control-label'
+      - Questionary::COURSE_FORMATS.each do |format|
+        %label.radio
+          = f.radio_button :course_format, format
+          = format
+  .control-group.well.pull-left
+    = f.label :ruby_knowledge, "Знаете ли вы ruby?", :class => 'control-label'
     .controls
-      %label.radio
-        = f.radio_button :question_2, 'A'
-        A
-      %label.radio
-        = f.radio_button :question_2, 'B'
-        B
-      %label.radio
-        = f.radio_button :question_2, 'C'
-        C
-  .control-group
-    = f.label :question_3, :class => 'control-label'
+      - Questionary::YES_NO.each do |knowledge|
+        %label.radio
+          = f.radio_button :ruby_knowledge, knowledge
+          = knowledge
+  .control-group.well.pull-right
+    = f.label :nix_knowledge, "Работали ли вы в UNIX-подобной системе?", :class => 'control-label'
     .controls
-      %label.checkbox
-        = f.check_box :question_3, :value => 'A'
-        A
-      %label.checkbox
-        = f.check_box :question_3, :value => 'B'
-        B
-      %label.checkbox
-        = f.check_box :question_3, :value => 'C'
-        C
+      - Questionary::YES_NO.each do |knowledge|
+        %label.radio
+          = f.radio_button :nix_knowledge, knowledge
+          = knowledge
+  .clearfix
+  .control-group.well
+    = f.label :expirience, "Каков ваш опыт в программировании?", :class => 'control-label'
+    .controls
+      - Questionary::EXPIRIENCE.each do |expirience|
+        %label.radio
+          = f.radio_button :expirience, expirience
+          = expirience
   .control-group
     .controls
-      = f.submit 'Отправить', :class => 'btn btn-primary'
+      = f.submit 'Отправить', :class => 'btn btn-success btn-large'
+
+%p#thank_you.well.well-large.hide
+  %strong Большущее вам спасибо!
+  %br/
+  Скоро мы все сообщим! :)
+
 %hr
 
 .row-fluid.marketing
