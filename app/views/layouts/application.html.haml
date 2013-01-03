@@ -24,4 +24,8 @@
       = yield
       %hr
       .footer
-        %p © Kodo Labs 2012
+        %ul.social-likes{ "data-counters" => "no" }
+          %li.facebook{ :title => "Поделиться ссылкой на Фейсбуке" } Facebook
+          %li.twitter{ "data-via" => "kodolabs", :title => "Поделиться ссылкой в Твиттере" } Twitter
+          %li.vkontakte{ :title => "Поделиться ссылкой во Вконтакте" } Вконтакте
+          %li.plusone{ :title => "Поделиться ссылкой в Гугл-плюсе" } Google+

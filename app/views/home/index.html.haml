@@ -3,17 +3,13 @@
   %p.lead
     Севастопольская команда
     %a{:href => "http://kodolabs.com", :target => "_blank"} Kodo Labs
-    организовывает курсы по Ruby и Ruby on Rails.
-    Этот сайт поможет нам собрать информацию о ваших предпочтениях и пожеланиях.
+    организовывает курсы по Ruby и Ruby on Rails. Если Вам интересно заполните форму.
 
 = form_for @user, :remote => true, :html => { :class => 'form-horizontal' } do |f|
-  .input-prepend.input-append
-    %span.add-on
-      %i.icon-envelope
-    = email_field_tag :email, '', :class => 'span3', :required => true, :placeholder => 'Ваш email'
-    = f.submit 'Добавить', :class => 'btn btn-success'
+  = email_field_tag :email, '', :class => 'span3', :required => true, :placeholder => 'Ваш email'
+  = f.submit 'Добавить', :class => 'btn btn-success btn-large'
   %p.muted
-    %small Мы вышлем вам приглашение на курсы, как только определимся с датой и форматом.
+    %small Мы вышлем вам приглашение, когда определится дата первой встречи.
 
 = form_for @questionary, :remote => true, :html => { :class => 'form-vertical hide' } do |f|
   %p
@@ -52,23 +48,12 @@
   .control-group
     .controls
       = f.submit 'Отправить', :class => 'btn btn-success btn-large'
-%p#thank_you.well.well-large.hide
-  Спасибо за уделенное время. Воспользуйтесь кнопками социальных сетей
-
 %hr
 
-.row-fluid.marketing
+.marketing
   %h3 Почему Вам стоит записаться на курсы
-  .span5
-    %h4 Скорость разработки
-    %p Быстрая разработка веб-приложений
-    %h4 Перспектива влиться в нашу команду
-    %p Возможность продолжить обучение и начать работу в нашей команде после окончания курсов
-  .span6
-    %h4 Знание одного из самых классных языков программирования
-    %p Ruby создавался как язык для программистов, он очень экспрессивный и интуитивный
-    %h4 Высокая зарплата rails-разработчика
-    %p
-      Статистика зарплат от
-      %a{:href => "http://dou.ua/lenta/articles/developers-salaries-may-june-2012/", :target => "_blank"} DOU
-      по Украине
+  %ul
+    %li Откройте мир быстрой и продуктивной web-разработки - от идеи до готового решения всего несколько дней
+    %li Изучение одного из популяршейшего языка программирования - Ruby
+    %li Перспективы последующей работы с нашей команде
+    %li Узнайте современные подходы в создание, изменение и поддержке программного продукта

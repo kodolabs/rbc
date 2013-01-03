@@ -12,6 +12,8 @@
  *= require_tree .
  */
 
+ @import "social-likes.css";
+
 body {
   padding-top: 20px;
   padding-bottom: 40px;
@@ -39,9 +41,10 @@ body {
 
 .marketing {
   margin: 30px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+
+  li {
+    margin: 15px 0;
+  }
 }
 
 form {
@@ -55,4 +58,8 @@ form {
     text-align: left;
     margin-left: 0;
   }
+}
+
+.footer {
+  text-align: center;
 }

@@ -18,8 +18,6 @@ feature 'User save information', :js do
       choose Questionary::EXPIRIENCE.first
       click_on 'Отправить'
     end
-
-    page.should have_selector('#thank_you', :visible => true)
   end
 
   scenario 'submit invalid email' do
