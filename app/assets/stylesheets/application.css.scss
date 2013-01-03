@@ -10,9 +10,8 @@
  *
  *= require_self
  *= require_tree .
- */
-
- @import "social-likes.css";
+ *= require "social-likes"
+*/
 
 body {
   padding-top: 20px;
