@@ -1,52 +1,63 @@
 .jumbotron
-  %h1 Курсы по Ruby и Ruby on Rails
+  %h1 Ruby on Rails: Быстрый старт
   %p.lead
-    Севастопольская команда
-    %a{:href => "http://kodolabs.com", :target => "_blank"} Kodo Labs
-    организовывает курсы по Ruby и Ruby on Rails.
-    Этот сайт поможет нам собрать информацию о ваших предпочтениях и пожеланиях.
-    %br/
-    Если вам это интересно, смело жмите кнопку "Мне интересно!"
+    Познакомьтесь с лучшим фреймворком для создания веб приложений.
+    Начните использовать Rails в реальных проектах уже завтра.
 
-= form_for @user, :remote => true, :html => { :class => 'form-horizontal' } do |f|
-  %p Мы вышлем вам приглашение на курсы, как только определимся с датой и форматом.
-  = email_field_tag :email, '', :class => 'span3', :required => true, :placeholder => 'Ваш email'
-  = f.submit 'Мне интересно!', :class => 'btn btn-success btn-large'
+-#%hr
+
+-#.row-fluid.place
+-#  .span6
+-#    %strong Севастополь
+-#  .span6
+-#    %strong Вторая половина мая 2013
+
+.row-fluid
+  .span12.program
+    Команда опытных ruby разработчиков проведет 2-х дневные курсы в Севастополе в конце мая
+    (подпишись на новости чтобы узнать точную дату и место проведения).
+    Программа совместит в себе теорию и практику. Мы расскажем как быстро настроить рабочую среду и с чего начать разработку
+    приложения. Ты узнаешь как устроено rails приложение, как организовать работу с базой данных, как правильно
+    структурировать код и как писать автоматизированные тесты.
+
+.row-fluid.target
+  .span6
+    .heading Опытным
+    %p
+      Если ты пишешь на PHP, Python или C#, тебе будет интересно познакомиться с новым языком - Ruby.
+      Он красив, лаконичен и экспрессивен. А Ruby on Rails - это мощная инфраструктура, которая делает работу приятной и продуктивной.
+  .span6
+    .heading Начинающим
+    %p
+      Ruby - это прекрасный язык для того, чтобы учиться программированию. А Ruby on Rails научит тебя правильным
+      подходам к программированию, такие как модульность, расширяемость и тестирование.
+%hr
+
+.subscribe
+  = form_for @user, :remote => true, :html => { :class => 'form-horizontal' } do |f|
+    %p Я хочу подписаться на новости о курсе "Ruby on Rails: быстрый старт"
+    = email_field_tag :email, '', :class => 'span3', :required => true, :placeholder => 'Ваш email'
+    = f.submit 'Подписаться', :class => 'btn'
+
+%hr
 
 = form_for @questionary, :remote => true, :html => { :class => 'form-vertical hide' } do |f|
   %p
-    Мы будем очень благодарны, если вы ответите на несколько вопросов.
-    %br/
-    Это займет 30 секунд и нужно, чтобы курсы были эффективными.
+    Мы будем очень благодарны, если вы ответите на вопросы.
   .control-group.well
-    = f.label :course_format, "Какой формат курсов вам больше нравится?", :class => 'control-label'
+    = f.label :language, "Какие языки программирования вы знаете?", :class => 'control-label'
     .controls
-      - Questionary::COURSE_FORMATS.each do |format|
+      - Questionary::LANGUAGES.each do |language|
         %label.radio
-          = f.radio_button :course_format, format
-          = format
-  .control-group.well.pull-left
-    = f.label :ruby_knowledge, "Знаете ли вы ruby?", :class => 'control-label'
-    .controls
-      - Questionary::YES_NO.each do |knowledge|
-        %label.radio
-          = f.radio_button :ruby_knowledge, knowledge
-          = knowledge
-  .control-group.well.pull-right
-    = f.label :nix_knowledge, "Работали ли вы в UNIX-подобной системе?", :class => 'control-label'
-    .controls
-      - Questionary::YES_NO.each do |knowledge|
-        %label.radio
-          = f.radio_button :nix_knowledge, knowledge
-          = knowledge
-  .clearfix
+          = f.check_box :languages, {}, language
+          = language
   .control-group.well
-    = f.label :expirience, "Каков ваш опыт в программировании?", :class => 'control-label'
+    = f.label :experience, 'Какой у вас опыт программирования?', :class => 'control-label'
     .controls
-      - Questionary::EXPIRIENCE.each do |expirience|
+      - Questionary::EXPERIENCE.each do |experience|
         %label.radio
-          = f.radio_button :expirience, expirience
-          = expirience
+          = f.radio_button :experience, experience
+          = experience
   .control-group
     .controls
       = f.submit 'Отправить', :class => 'btn btn-success btn-large'
@@ -56,19 +67,5 @@
   %br/
   Скоро мы все сообщим! :)
 
-%hr
 
-.row-fluid.marketing
-  .span6
-    %h4 Скорость разработки
-    %p Быстрая разработка веб-приложений
-    %h4 Перспектива влиться в нашу команду
-    %p Возможность продолжить обучение и начать работу в нашей команде после окончания курсов
-    %h4 Высокая зарплата rails-разработчика
-    %p
-      Статистика зарплат от
-      %a{:href => "http://dou.ua/lenta/articles/developers-salaries-may-june-2012/", :target => "_blank"} DOU
-      по Украине
-  .span6
-    %h4 Знание одного из самых классных языков программирования
-    %p Ruby создавался как язык для программистов, он очень экспрессивный и интуитивный
+

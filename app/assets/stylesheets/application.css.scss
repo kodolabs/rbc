@@ -8,13 +8,20 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
+ *= require_self
  */
 
 body {
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 0px;
+}
+
+footer {
+  background: #040915;
+  padding: 40px 0;
+  margin-top: 60px;
+  color: white;
 }
 
 .container-narrow {
@@ -58,4 +65,71 @@ form {
   font-size: 200%;
   text-align: center;
   line-height: 100%;
+}
+
+.subscribe {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: white ; // rgb(255, 229, 161)
+  overflow: hidden;
+}
+
+input[type="email"] {
+
+  border-radius: 3px;
+  padding: .6em .9em .5em;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.btn {
+  border: 0;
+  border-radius: 3px;
+  padding: .9em 1.8em .8em;
+  box-shadow: none;
+  background: #db3c14;
+  color: #fff;
+  text-transform: uppercase;
+  margin-right: 10px;
+  text-shadow: none;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: bold;
+  -webkit-transition: .1s ease-in background-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+.program {
+  font-weight: 200;
+  font-size: 130%;
+  color: #777;
+  margin-bottom: 2em;
+  line-height: 24px;
+}
+
+.place {
+  font-size: 1.6em;
+}
+
+.target {
+  font-weight: 200;
+  color: #777;
+  .heading {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  a {
+    color: #dbe4ea;
+  }
+
+  li {
+    float: left;
+    margin-right: 20px;
+  }
 }

@@ -5,23 +5,24 @@
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
-    %title Rails Bootcamp
+    %title Ruby on Rails: Быстрый старт в Севастополе
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     .container-narrow
-      .masthead
-        %ul.nav.nav-pills.pull-right
-          %li
-            %a{:href => "http://kodolabs.com", :target => "_blank"} О нас
-          %li
-            %a{:href => "http://setupmeetup.com/", :target => "_blank"} SetupMeetup
-          %li
-            %a{:href => "https://groups.google.com/forum/?fromgroups#!forum/ror2sevastopol"} RoR-сообщество
-        %h3.muted= link_to 'Rails Bootcamp', root_path
-      %hr
       = yield
-      %hr
-      .footer
-        %p © Kodo Labs 2012
+    %footer
+      .container-narrow
+        .row-fluid
+          .span9
+            %ul.navigation
+              %li
+                %a{href:'#'} Программа
+              %li
+                %a{href:'#'}  Место
+              %li
+                %a{href:'#'}  Тренеры
+
+          .span3.pull-right
+            Kodo Labs &copy; 2013
