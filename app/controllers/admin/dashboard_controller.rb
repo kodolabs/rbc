@@ -16,6 +16,6 @@ class Admin::DashboardController < ApplicationController
   end
 
   def validate_password(u, p)
-    u == 'admin' && p == 'rails'
+    u == 'admin' && p == ENV['RAILSBOOTCAMP_ADMIN_PASSWORD']
   end
 end
