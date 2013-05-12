@@ -22,7 +22,7 @@ set :deploy_to,             "/home/upscript/domains/railsbootcamp"
 set :branch,                "master"
 set :deploy_via,            :remote_cache
 
-set :unicorn_conf,          "#{deploy_to}/current/unicorn.rb"
+set :unicorn_conf,          "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid,           "#{deploy_to}/shared/pids/unicorn.pid"
 
 role :app, domain
