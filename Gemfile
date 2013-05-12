@@ -21,3 +21,12 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
 end
+
+group :production do
+  gem 'unicorn'
+end
+
+group :tools do
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+end
