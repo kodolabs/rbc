@@ -30,8 +30,8 @@ role :web, domain
 role :db,  domain, :primary => true
 
 # Create uploads directory and link
-task :database, :roles => :app do
-  #run "cp #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+task :configure, :roles => :app do
+  run "ln -s #{shared_path}/config/config.yml #{release_path}/config/config.yml"
 end
 
 namespace :deploy do
@@ -46,5 +46,6 @@ namespace :deploy do
   end
 end
 
-after "deploy:update", "deploy:cleanup"
+before 'deploy:finalize_update', 'configure'
+after 'deploy:update', 'deploy:cleanup'
 
