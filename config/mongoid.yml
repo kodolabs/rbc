@@ -81,4 +81,6 @@ test:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
+      database: rbc_production
+      hosts:
+        - localhost:27017
