@@ -5,6 +5,7 @@ Rbc::Application.routes.draw do
   resources :questionaries, :only => :create
 
   namespace :admin do
+    root to: 'dashboard#show'
     resource :dashboard, controller: 'dashboard'
   end
 

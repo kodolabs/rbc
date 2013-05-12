@@ -112,6 +112,8 @@ GEM
       http_parser.rb (~> 0.5.3)
       multi_json (~> 1.0)
     polyglot (0.3.3)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -198,6 +200,7 @@ DEPENDENCIES
   jquery-rails
   mongoid (= 3.0.14)
   poltergeist
+  quiet_assets
   rails (= 3.2.9)
   rspec-rails
   rvm-capistrano
