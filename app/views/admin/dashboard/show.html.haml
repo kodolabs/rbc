@@ -1,0 +1,17 @@
+
+.container
+  .page-header
+    %h2 Subscribers
+
+    %p.mute
+      == #{@users.count} subscribers:
+
+
+    - if @users.any?
+      %table.table
+        - @users.each do |user|
+          %tr
+            %td= user.email
+
+    - else
+      no subscribers yet
