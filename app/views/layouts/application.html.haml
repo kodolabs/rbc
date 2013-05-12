@@ -10,19 +10,21 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .container-narrow
+    #wrap
       = yield
+      #push
+
     %footer
       .container-narrow
         .row-fluid
-          .span9
-            %ul.navigation
-              %li
-                %a{href:'#'} Программа
-              %li
-                %a{href:'#'}  Место
-              %li
-                %a{href:'#'}  Тренеры
+          / .span9
+          /   %ul.navigation
+          /     %li
+          /       %a{href:'#'} Программа
+          /     %li
+          /       %a{href:'#'}  Место
+          /     %li
+          /       %a{href:'#'}  Тренеры
 
-          .span3.pull-right
-            Kodo Labs &copy; 2013
+          .span12
+            .pull-right Kodo Labs &copy; 2013

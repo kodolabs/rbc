@@ -1,4 +1,3 @@
 <% if @user.persisted? %>
-  $('#new_user input').addClass('disabled').attr('disabled', 'disabled');
-  $('#new_questionary').slideDown('slow');
+  $('#questionary').modal();
 <% end %>
