@@ -6,7 +6,7 @@ set :rvm_type,              :user
 
 set :application,           "railsbootcamp"
 set :domain,                "upscript.com"
-set :repository,            "git@github.com:kodolabs/rbc.git"
+set :repository,            "git@github.com:jurgens/rbc.git"
 set :rails_env,             :production
 
 default_run_options[:pty] = true
@@ -19,7 +19,7 @@ set :runner,                "upscript"
 set :use_sudo,              false
 
 set :deploy_to,             "/home/upscript/domains/railsbootcamp"
-set :branch,                "ruby-on-rails-quick-start"
+set :branch,                "master"
 set :deploy_via,            :remote_cache
 
 set :unicorn_conf,          "#{deploy_to}/current/unicorn.rb"
