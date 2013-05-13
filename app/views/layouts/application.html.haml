@@ -5,12 +5,22 @@
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
-    %title Ruby on Rails: Быстрый старт в Севастополе
+    %title Курсы "Ruby on Rails: Быстрый старт" в Севастополе
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+
+    %meta{property:"og:type", content:"article"}
+    %meta{property:"og:url", content:"http://railskickstart.com.ua/"}
+    %meta{property:"og:title", content:"Курсы 'Ruby on Rails: Быстрый старт' в Севастополе"}
+    %meta{property:"og:description", content:"Познакомься с замечательным фреймворком для создания веб приложений. Начни использовать Rails в реальных проектах уже завтра."}
+    %meta{property:"og:image", content:"http://rubyonrails.org/images/rails.png"}
+    %meta{name:"twitter:card", content: "Курсы 'Ruby on Rails: Быстрый старт' в Севастополе: http://railskickstart.com.ua/"}
+    %meta{name:"twitter:site", content:"http://railskickstart.com.ua/"}
+    %meta{name:"twitter:creator", content:"@kodolabs"}
+
     = csrf_meta_tags
   %body
-    
+
     = render 'layouts/analytics'
 
     #wrap
@@ -20,7 +30,8 @@
     %footer
       .container-narrow
         .row-fluid
-          / .span9
+          .span9
+            = render 'layouts/social-likes'
           /   %ul.navigation
           /     %li
           /       %a{href:'#'} Программа
@@ -29,5 +40,5 @@
           /     %li
           /       %a{href:'#'}  Тренеры
 
-          .span12
+          .span3
             .pull-right Kodo Labs &copy; 2013
