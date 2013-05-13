@@ -4,6 +4,7 @@ gem 'rails', '3.2.9'
 gem 'mongoid', '3.0.14'
 gem 'haml', '3.1.7'
 gem 'jquery-rails'
+gem 'quiet_assets'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -20,4 +21,13 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
+end
+
+group :production do
+  gem 'unicorn'
+end
+
+group :tools do
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 end

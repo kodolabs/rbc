@@ -4,6 +4,11 @@ Rbc::Application.routes.draw do
   resources :users, :only => :create
   resources :questionaries, :only => :create
 
+  namespace :admin do
+    root to: 'dashboard#show'
+    resource :dashboard, controller: 'dashboard'
+  end
+
   if Rails.application.config.consider_all_requests_local
     get "errors/error_404"
     get "errors/error_500"
