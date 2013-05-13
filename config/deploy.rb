@@ -4,9 +4,9 @@ require 'bundler/capistrano'
 set :rvm_ruby_string,       '1.9.3'
 set :rvm_type,              :user
 
-set :application,           "railsbootcamp"
-set :domain,                "upscript.com"
-set :repository,            "git@github.com:jurgens/rbc.git"
+set :application,           'railskickstart'
+set :domain,                'upscript.com'
+set :repository,            'git@github.com:kodolabs/rbc.git'
 set :rails_env,             :production
 
 default_run_options[:pty] = true
@@ -14,12 +14,12 @@ ssh_options[:paranoid]    = false
 
 set :scm, "git"
 
-set :user,                  "upscript"
-set :runner,                "upscript"
+set :user,                  'upscript'
+set :runner,                'upscript'
 set :use_sudo,              false
 
-set :deploy_to,             "/home/upscript/domains/railsbootcamp"
-set :branch,                "master"
+set :deploy_to,             '/home/upscript/domains/railskickstart'
+set :branch,                'master'
 set :deploy_via,            :remote_cache
 
 set :unicorn_conf,          "#{deploy_to}/current/config/unicorn.rb"

@@ -2,6 +2,7 @@
 
 class Questionary
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   LANGUAGES = [
     'C / C++',
