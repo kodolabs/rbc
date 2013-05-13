@@ -1,16 +1,16 @@
 
 
-#questionary.modal.fade{ role:'dialog', 'aria-labbeled-by' => 'modal_label', 'aria-hidden' => false }
+#questionary.modal.hide.fade{ role:'dialog', 'aria-labbeled-by' => 'modal_label', 'aria-hidden' => false }
 
   = form_for @questionary, :remote => true, :html => { :class => 'form-vertical' } do |f|
 
     .modal-header
       %button{ type:"button", class:"close", 'data-dismiss'=>"modal", 'aria-hidden'=>"true" } &times;
       %h3#model_label Спасибо за проявленный интерес!
-    
+
     .modal-body
-      
-      %h4 
+
+      %h4
         Мы будем очень благодарны, если ты ответишь на пару вопросов.
         Это поможет нам сделать программу курсов интереснее и полезнее.
 
@@ -28,7 +28,7 @@
             %label.radio
               = f.radio_button :experience, experience
               = experience
-    
+
     .modal-footer
       = f.submit 'Отправить', class: 'btn btn-primary'
 
