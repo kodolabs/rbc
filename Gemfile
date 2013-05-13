@@ -13,12 +13,17 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'letter_opener'
+end
+
 group :development, :test do
   gem 'debugger'
 end
 
 group :test do
   gem 'rspec-rails'
+  gem 'email_spec'
   gem 'capybara'
   gem 'poltergeist'
 end
