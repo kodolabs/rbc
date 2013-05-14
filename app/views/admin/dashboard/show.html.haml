@@ -6,12 +6,12 @@
     %p.mute
       == #{@users.count} subscribers:
 
-
     - if @users.any?
       %table.table
         - @users.each do |user|
           %tr
             %td= user.email
+            %td= link_to 'delete', [:admin, user], method: 'delete', 'data-confirm' => "Are you sure you want to delete '#{user.email}'?"
 
     - else
       no subscribers yet
