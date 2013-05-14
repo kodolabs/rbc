@@ -7,6 +7,7 @@ Rbc::Application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resource :dashboard, controller: 'dashboard'
+    resources :users
   end
 
   if Rails.application.config.consider_all_requests_local
