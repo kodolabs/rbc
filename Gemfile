@@ -26,6 +26,7 @@ group :test do
   gem 'email_spec'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'shoulda-matchers'
 end
 
 group :production do
