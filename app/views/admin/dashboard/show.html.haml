@@ -1,18 +1,38 @@
 
 .container
-  .page-header
-    %h2 Subscribers
+  .row
+    .span6
+      .page-header
+        %h2 Подписались
 
-    %p.mute
-      == #{@users.count} subscribers:
+      %p.mute
+        == #{@users.count} подписчиков:
 
-    - if @users.any?
-      %table.table
-        - @users.each do |user|
+      - if @users.any?
+        %table.table
+          - @users.each do |user|
+            %tr
+              %td= user.email
+              %td= time_ago_in_words(user.created_at) + ' ago' unless user.created_at.blank?
+              %td= link_to 'delete', [:admin, user], method: 'delete', 'data-confirm' => "Are you sure you want to delete '#{user.email}'?"
+
+      - else
+        нет подписавшихся
+
+    .span6
+      .page-header
+        %h2 Опыт
+
+      %p.mute
+        == #{@questions.count} ответов:
+
+      - if @questions.any?
+        %table.table
           %tr
-            %td= user.email
-            %td= time_ago_in_words(user.created_at) + ' ago' unless user.created_at.blank?
-            %td= link_to 'delete', [:admin, user], method: 'delete', 'data-confirm' => "Are you sure you want to delete '#{user.email}'?"
-
-    - else
-      no subscribers yet
+            %th Опыт
+            %th Языки
+          - @questions.each do |q|
+            - unless q.experience.blank?
+              %tr
+                %td= q.experience
+                %td= q.languages.to_a.join(', ')

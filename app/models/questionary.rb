@@ -16,12 +16,12 @@ class Questionary
   EXPERIENCE = [
     'нет опыта',
     'меньше года',
-    '1-3 года',
+    '1-2 года',
     '3-6 лет',
     'больше 6-ти лет'
   ]
 
   field :user_id, type: Integer
-  field :languages
-  field :experience
+  field :languages, type: Array
+  field :experience, type: Array
 end

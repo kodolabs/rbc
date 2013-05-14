@@ -3,6 +3,7 @@ class Admin::DashboardController < ApplicationController
 
   def show
     @users = User.all
+    @questions = Questionary.all
   end
 
   protected
@@ -16,7 +17,6 @@ class Admin::DashboardController < ApplicationController
   end
 
   def validate_password(u, p)
-    puts " -- #{u} #{p}=#{AppConfig['admin_password']}?"
     u == 'admin' && p == AppConfig['admin_password']
   end
 end

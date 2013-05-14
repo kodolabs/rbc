@@ -19,7 +19,7 @@
         .controls
           - Questionary::LANGUAGES.each do |language|
             %label.checkbox
-              = f.check_box :languages, {}, language
+              = check_box_tag 'questionary[languages][]', language
               = language
       .control-group
         = f.label :experience, 'Сколько лет ты программируешь?', :class => 'control-label'
