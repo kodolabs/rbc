@@ -23,6 +23,8 @@
 
     = render 'layouts/analytics'
 
+    = render 'layouts/navbar'
+
     #wrap
       = yield
       #push
@@ -32,13 +34,6 @@
         .row-fluid
           .span9
             = render 'layouts/social-likes'
-          /   %ul.navigation
-          /     %li
-          /       %a{href:'#'} Программа
-          /     %li
-          /       %a{href:'#'}  Место
-          /     %li
-          /       %a{href:'#'}  Тренеры
 
           .span3
             .pull-right Kodo Labs &copy; 2013

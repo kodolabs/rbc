@@ -3,6 +3,12 @@ Rbc::Application.routes.draw do
 
   resources :users, :only => :create
   resources :questionaries, :only => :create
+  match '/register' => 'registrations#new', as: :new_registration
+  resources :registrations, only: [:new, :create] do
+    collection do
+      get :success
+    end
+  end
 
   namespace :admin do
     root to: 'dashboard#show'
