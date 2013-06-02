@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '~>3.2.9'
 gem 'mongoid', '3.0.14'
 gem 'haml', '3.1.7'
 gem 'jquery-rails'
 gem 'quiet_assets'
+gem 'bootstrap-sass'
+gem 'simple_form'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -36,4 +38,6 @@ end
 group :tools do
   gem 'capistrano'
   gem 'rvm-capistrano'
+  gem 'guard'
+  gem 'guard-rspec'
 end
