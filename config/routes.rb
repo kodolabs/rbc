@@ -3,6 +3,8 @@ Rbc::Application.routes.draw do
 
   resources :users, :only => :create
   resources :questionaries, :only => :create
+  match '/location' => 'home#location', as: :location
+  match '/program' => 'home#program', as: :program
   match '/register' => 'registrations#new', as: :new_registration
   resources :registrations, only: [:new, :create] do
     collection do
