@@ -3,7 +3,7 @@ class Admin::DashboardController < ApplicationController
 
   def show
     @users = User.all
-    @questions = Questionary.all
+    @statistics = Statistics.new
   end
 
   protected

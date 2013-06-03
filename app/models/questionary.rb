@@ -21,6 +21,9 @@ class Questionary
     'больше 6-ти лет'
   ]
 
+  scope :by_language,   lambda { |value| any_of(:languages => value) }
+  scope :by_experience, lambda { |value| any_of(:experience => value) }
+
   field :user_id, type: Integer
   field :languages, type: Array
   field :experience, type: Array
