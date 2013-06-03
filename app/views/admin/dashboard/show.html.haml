@@ -24,15 +24,18 @@
         %h2 Опыт
 
       %p.mute
-        == #{@questions.count} ответов:
+        #{ @statistics.count } ответов:
 
-      - if @questions.any?
-        %table.table
+      %h2 Языки
+      %table.table
+        - @statistics.languages.each do |language, count|
           %tr
-            %th Опыт
-            %th Языки
-          - @questions.each do |q|
-            - unless q.experience.blank?
-              %tr
-                %td= q.experience
-                %td= q.languages.to_a.join(', ')
+            %th= language
+            %td=  count
+
+      %h2 Опыт
+      %table.table
+        - @statistics.experience.each do |experience, count|
+          %tr
+            %th= experience
+            %td= count
