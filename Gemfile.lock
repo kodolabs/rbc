@@ -57,6 +57,7 @@ GEM
       execjs
     coffee-script-source (1.4.0)
     columnize (0.3.6)
+    database_cleaner (1.0.1)
     debugger (1.2.2)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.1.1)
@@ -112,6 +113,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mail_view (1.0.3)
+      tilt
     method_source (0.8.1)
     mime-types (1.23)
     mongoid (3.0.14)
@@ -240,6 +243,7 @@ DEPENDENCIES
   capistrano
   capybara
   coffee-rails (~> 3.2.1)
+  database_cleaner
   debugger
   email_spec
   guard
@@ -247,6 +251,7 @@ DEPENDENCIES
   haml (= 3.1.7)
   jquery-rails
   letter_opener
+  mail_view
   mongoid (= 3.0.14)
   poltergeist
   quiet_assets
