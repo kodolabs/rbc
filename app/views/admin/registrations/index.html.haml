@@ -1,0 +1,15 @@
+.container
+  .page-header
+    %h2 Регистрации
+
+  - if @registrations.empty?
+    %p нет регистраций
+  - else
+    %table.table
+      - @registrations.each do |reg|
+        %tr
+          %td= reg.status
+          %td= reg.name
+          %td= reg.email
+          %td= time_ago_in_words(reg.created_at)
+          %td= link_to 'delete', [:admin, reg], method: :delete, data: {confirm: 'Точно удалить?'}

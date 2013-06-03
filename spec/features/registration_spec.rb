@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe 'Registration', :focus do
+describe 'Registration' do
   specify 'filling the form' do
     visit '/'
     click_on 'Регистрация'

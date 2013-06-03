@@ -8,6 +8,7 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new params[:registration]
 
     if @registration.save
+      UserMailer.registration(@registration).deliver
       redirect_to action: :success
     else
       render :new

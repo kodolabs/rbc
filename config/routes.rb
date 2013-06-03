@@ -14,6 +14,7 @@ Rbc::Application.routes.draw do
     root to: 'dashboard#show'
     resource :dashboard, controller: 'dashboard'
     resources :users
+    resources :registrations
   end
 
   if Rails.application.config.consider_all_requests_local
@@ -21,5 +22,9 @@ Rbc::Application.routes.draw do
     get "errors/error_500"
   else
     match '*not_found', to: 'errors#error_404'
+  end
+
+  if Rails.env.development?
+    mount MailPreview => 'mail_view'
   end
 end
