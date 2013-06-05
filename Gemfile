@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'quiet_assets'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'mail_view'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -17,7 +18,6 @@ end
 
 group :development do
   gem 'letter_opener'
-  gem 'mail_view'
 end
 
 group :development, :test do
