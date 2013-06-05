@@ -1,0 +1,33 @@
+.container-narrow
+  %h1 Регистрация
+
+  %br
+
+  %p.lead Как это работает
+
+  .row-fluid
+    .span4
+      %h4 1. Регистрация
+      %p Ты отправляешь заявку на регистрацию.
+
+    .span4
+      %h4 2. Платеж
+      %p Оплачиваешь стоимость курсов (200 грн) одним из доступных способов (подробности мы вышлем в письме)
+
+    .span4
+      %h4 3. Подтверждение
+      %p Получаешь письмо с подтверждением.
+
+  %br
+  %br
+
+  %p.lead
+    Запишите меня на курсы
+    %strong Ruby on Rails: Быстрый старт
+
+  = simple_form_for @registration, :html => {:class => '_form-horizontal'} do |f|
+    = f.input :name, label: false, placeholder: 'Имя'
+    = f.input :email, label: false, placeholder: 'Электропочта'
+    -#.form-actions
+    = f.submit 'Отправить', class: 'btn btn-primary'
+

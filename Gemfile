@@ -17,6 +17,7 @@ end
 
 group :development do
   gem 'letter_opener'
+  gem 'mail_view'
 end
 
 group :development, :test do
@@ -29,6 +30,7 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
 
 group :production do
