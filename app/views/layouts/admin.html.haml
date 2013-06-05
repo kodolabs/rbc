@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
+    %title Railskickstart Admin
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+  %body
+
+    = render 'layouts/analytics'
+
+    = render 'layouts/navbar_admin'
+
+    #wrap
+      = yield
+      #push
+
+    %footer
+      .container
