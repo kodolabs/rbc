@@ -26,7 +26,7 @@
     %strong Ruby on Rails: Быстрый старт
 
   = simple_form_for @registration, :html => {:class => '_form-horizontal'} do |f|
-    = f.input :name, label: false, placeholder: 'Имя'
+    = f.input :name, label: false, placeholder: 'Имя и Фамилия'
     = f.input :email, label: false, placeholder: 'Электропочта'
     -#.form-actions
     = f.submit 'Отправить', class: 'btn btn-primary'
