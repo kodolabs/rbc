@@ -4,6 +4,8 @@
 
   .page-header
     %h2 Регистрации
+    %p== #{Registration.confirmed.count} подтвержденных из #{Registration.count}
+
 
   - if @registrations.empty?
     %p нет регистраций
