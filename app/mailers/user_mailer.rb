@@ -14,4 +14,9 @@ class UserMailer < ActionMailer::Base
     mail to: reg.email, subject: 'Railskickstart: спасибо за регистрацию'
   end
 
+  def confirm(reg)
+    @name = reg.name
+    mail to: reg.email, subject: 'Railskickstart: подтверждение участия'
+  end
+
 end

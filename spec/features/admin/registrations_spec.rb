@@ -15,15 +15,26 @@ describe 'Admin registrations' do
     end
 
     context 'when there are registrations' do
-      before do
-        @registration = Registration.create name: 'Jurgen', email: 'jurgen@example.org'
-      end
+      before { @registration = Registration.create name: 'Jurgen', email: 'jurgen@example.org' }
 
       specify 'should be on page' do
         visit admin_registrations_path
         page.should have_content 'Jurgen'
         page.should have_content 'jurgen@example.org'
       end
+    end
+  end
+
+  describe 'confirmation' do
+    before { @registration = Registration.create name: 'Jurgen', email: 'jurgen@example.org' }
+
+    specify do
+      visit admin_registrations_path
+      within 'table tr' do
+        click_on 'Подтвердить'
+      end
+
+      page.should have_content 'Статус подтвержден'
     end
   end
 end

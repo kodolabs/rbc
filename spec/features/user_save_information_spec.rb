@@ -1,7 +1,7 @@
 # encoding: UTF-8
 require 'spec_helper'
 
-feature 'User save information', :js do
+feature 'User save information', :pending do
   after { ActionMailer::Base.deliveries.clear }
 
   scenario 'submit all forms' do

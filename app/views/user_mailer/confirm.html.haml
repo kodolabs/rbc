@@ -1,0 +1,17 @@
+%body{style:"font-family: Arial, Helvetica, sans-serif"}
+  .container{style: 'width: 600px'}
+    %h1 Ruby on Rails: Быстрый Старт
+
+    %h2 Подтверждение участия
+
+    %p
+      Спасибо, #{@name}, мы получили ваш платеж.
+
+    %p
+      За пару дней до мероприятия мы еще отправим вам письмо с напоминанием
+      и расскажем как подготовить ваш ноутбук для выполнения практических заданий на курсах.
+
+
+  %p
+    == С нами можно связаться по электропочте <a href="mailto:#{UserMailer::CONTACT}">#{UserMailer::CONTACT}</a> или
+    написать твит для <a href="https://twitter.com/kodolabs", target="_blank">@kodolabs</a>.
