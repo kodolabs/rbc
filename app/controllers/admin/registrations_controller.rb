@@ -3,7 +3,7 @@
 class Admin::RegistrationsController < Admin::BaseController
 
   def index
-    @registrations = Registration.all
+    @registrations = Registration.desc(:created_at).all
   end
 
   def confirm
