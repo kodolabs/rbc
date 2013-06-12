@@ -3,31 +3,35 @@
 
   %br
 
-  %p.lead Как это работает
+  - if @opened
 
-  .row-fluid
-    .span4
-      %h4 1. Регистрация
-      %p Ты отправляешь заявку на регистрацию.
+    %p.lead Как это работает
 
-    .span4
-      %h4 2. Платеж
-      %p Оплачиваешь стоимость курсов (200 грн) одним из доступных способов (подробности мы вышлем в письме)
+    .row-fluid
+      .span4
+        %h4 1. Регистрация
+        %p Ты отправляешь заявку на регистрацию.
 
-    .span4
-      %h4 3. Подтверждение
-      %p Получаешь письмо с подтверждением.
+      .span4
+        %h4 2. Платеж
+        %p Оплачиваешь стоимость курсов (200 грн) одним из доступных способов (подробности мы вышлем в письме)
 
-  %br
-  %br
+      .span4
+        %h4 3. Подтверждение
+        %p Получаешь письмо с подтверждением.
 
-  %p.lead
-    Запишите меня на курсы
-    %strong Ruby on Rails: Быстрый старт
+    %br
+    %br
 
-  = simple_form_for @registration, :html => {:class => '_form-horizontal'} do |f|
-    = f.input :name, label: false, placeholder: 'Имя и Фамилия'
-    = f.input :email, label: false, placeholder: 'Электропочта'
-    -#.form-actions
-    = f.submit 'Отправить', class: 'btn btn-red'
 
+    %p.lead
+      Запишите меня на курсы
+      %strong Ruby on Rails: Быстрый старт
+
+    = simple_form_for @registration, :html => {:class => '_form-horizontal'} do |f|
+      = f.input :name, label: false, placeholder: 'Имя и Фамилия'
+      = f.input :email, label: false, placeholder: 'Электропочта'
+      -#.form-actions
+      = f.submit 'Отправить', class: 'btn btn-red'
+  - else
+    %p Извините, регистрация закрыта.

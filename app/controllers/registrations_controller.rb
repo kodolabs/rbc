@@ -1,6 +1,7 @@
 class RegistrationsController < ApplicationController
 
   def new
+    @opened = false
     @registration = Registration.new email: params[:email]
   end
 
