@@ -6,6 +6,8 @@
     %h2 Регистрации
     %p== #{Registration.confirmed.count} подтвержденных из #{Registration.count}
 
+    %p= link_to 'Export', format: 'csv'
+
 
   - if @registrations.empty?
     %p нет регистраций

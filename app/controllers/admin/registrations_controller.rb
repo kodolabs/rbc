@@ -1,9 +1,31 @@
 #encoding: utf-8
 
+require 'csv'
+
 class Admin::RegistrationsController < Admin::BaseController
 
   def index
-    @registrations = Registration.desc(:created_at).all
+    respond_to do |format|
+      format.html do
+        @registrations = Registration.desc(:created_at).all
+      end
+
+      format.csv do
+        filename = 'registrations.csv'
+
+        headers["Content-Type"] ||= 'text/csv'
+        headers["Content-Disposition"] = "attachment; filename=\"#{filename}\""
+        headers["Content-Transfer-Encoding"] = 'binary'
+
+        csv_string = CSV.generate do |csv|
+          csv << ['Name', 'Email']
+          Registration.all.each do |reg|
+            csv << [reg.name, reg.email]
+          end
+        end
+        render :text => csv_string
+      end
+    end
   end
 
   def confirm
