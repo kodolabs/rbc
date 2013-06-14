@@ -28,6 +28,8 @@ class Admin::RegistrationsController < Admin::BaseController
     end
   end
 
+
+
   def confirm
     @registration = Registration.find params[:id]
 
