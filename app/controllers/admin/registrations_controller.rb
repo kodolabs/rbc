@@ -43,6 +43,8 @@ class Admin::RegistrationsController < Admin::BaseController
     @reg = Registration.find params[:id]
 
     if @reg.destroy
+      UserMailer.cancel(@reg).deliver
+
       redirect_to :back, notice: 'Регистрация удалена'
     else
       redirect_to :back, error: 'Регистрация не была удалена'

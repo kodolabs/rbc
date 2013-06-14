@@ -19,4 +19,9 @@ class UserMailer < ActionMailer::Base
     mail to: reg.email, subject: 'Railskickstart: подтверждение участия'
   end
 
+  def cancel(reg)
+    @name = reg.name
+    mail to: reg.email, subject: 'Railskickstart: регистрация отменена'
+  end
+
 end

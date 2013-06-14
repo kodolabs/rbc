@@ -1,0 +1,15 @@
+%body{style:"font-family: Arial, Helvetica, sans-serif"}
+  .container{style: 'width: 600px'}
+    %h1 Ruby on Rails: Быстрый Старт
+
+    %h2 Отмена участия
+
+    %p
+      #{@name}, к сожалению, ваша регистрация отменена.
+
+    %p
+      Если вы считаете что это произошло по ошибке, пожалуйста напишите нам.
+
+  %p
+    == С нами можно связаться по электропочте <a href="mailto:#{UserMailer::CONTACT}">#{UserMailer::CONTACT}</a> или
+    написать твит для <a href="https://twitter.com/kodolabs", target="_blank">@kodolabs</a>.

@@ -12,4 +12,11 @@ class MailPreview < MailView
     reg.destroy
     mail
   end
+
+  def cancel
+    reg = Registration.create name: 'Jurgen', email: 'jurgen@example.org'
+    mail = UserMailer.cancel(reg)
+    reg.destroy
+    mail
+  end
 end
