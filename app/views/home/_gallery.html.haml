@@ -1,0 +1,12 @@
+#gallery.carousel.slide
+  %ol.carousel-indicators
+    - (0..28).each do |n|
+      %li{'data-target'=>"#gallery", 'data-slide-to' => "#{n.to_s.rjust(2, '0')}", :class => n == 0 ? 'active' : '' }
+
+  .carousel-inner
+    - (0..28).each do |n|
+      .item{:class => n == 0 ? 'active' : ''}
+        = image_tag "photos/#{n.to_s.rjust(2, '0')}.jpg"
+
+  %a{:class=>"carousel-control left", :href=>"#gallery", 'data-slide'=>"prev"} &lsaquo;
+  %a{:class=>"carousel-control right", :href=>"#gallery", 'data-slide'=>"next"} &rsaquo;

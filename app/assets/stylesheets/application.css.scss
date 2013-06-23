@@ -40,9 +40,9 @@ body {
   margin: 0 auto -81px;
 }
 
-#wrap > div:first-child {
-  padding-top: 80px;
-}
+//#wrap > div:first-child {
+//  padding-top: 80px;
+//}
 
 #push, footer {
   height: 80px;
@@ -214,4 +214,8 @@ input.string {
   padding: 20px;
   text-align: center;
   background-color: #f5f5f5;
+}
+
+.carousel-control {
+  top: 60%;
 }
