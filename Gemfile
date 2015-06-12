@@ -20,10 +20,6 @@ group :development do
   gem 'letter_opener'
 end
 
-group :development, :test do
-  gem 'debugger'
-end
-
 group :test do
   gem 'rspec-rails'
   gem 'email_spec'
